@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, lazy, Suspense } from "react";
 
 /* ── Layout ── */
 import Header from "./components/layout/Header";
@@ -22,7 +22,10 @@ import CursorTrail from "./components/effects/CursorTrail";
 /* ── UI ── */
 import ScrollProgress from "./components/ui/ScrollProgress";
 import LoadingScreen from "./components/ui/LoadingScreen";
-import AIChatTerminal from "./components/ui/AIChatTerminal";
+import ErrorBoundary from "./components/ui/ErrorBoundary";
+
+/* ── Lazy loaded components (code splitting) ── */
+const AIChatTerminal = lazy(() => import("./components/ui/AIChatTerminal"));
 
 /* ── Utils ── */
 import { printConsoleEasterEggs } from "./data/metadata";
@@ -80,21 +83,25 @@ export default function App() {
         <Header />
 
         {/* ── Main Content ── */}
-        <main>
-          <HeroTerminal />
-          <AboutSystem />
-          <ExperienceSection />
-          <TechStackSQL />
-          <ProjectsGitLog />
-          <MetricsDashboard />
-          <ContactAPI />
-        </main>
+        <ErrorBoundary>
+          <main>
+            <HeroTerminal />
+            <AboutSystem />
+            <ExperienceSection />
+            <TechStackSQL />
+            <ProjectsGitLog />
+            <MetricsDashboard />
+            <ContactAPI />
+          </main>
+        </ErrorBoundary>
 
         {/* ── Footer ── */}
         <Footer />
 
-        {/* ── AI Chat Terminal ── */}
-        <AIChatTerminal />
+        {/* ── AI Chat Terminal (lazy loaded) ── */}
+        <Suspense fallback={null}>
+          <AIChatTerminal />
+        </Suspense>
 
         {/* ── Command Palette ── */}
         <CommandPalette

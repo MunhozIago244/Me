@@ -30,14 +30,54 @@ function languageToEmoji(lang?: string | null) {
   return "📦";
 }
 
+const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in ms
+
+interface CacheEntry {
+  data: Project[];
+  timestamp: number;
+}
+
+function getCache(key: string): Project[] | null {
+  try {
+    const cached = localStorage.getItem(key);
+    if (!cached) return null;
+    const entry: CacheEntry = JSON.parse(cached);
+    if (Date.now() - entry.timestamp > CACHE_DURATION) {
+      localStorage.removeItem(key);
+      return null;
+    }
+    return entry.data;
+  } catch {
+    return null;
+  }
+}
+
+function setCache(key: string, data: Project[]): void {
+  try {
+    const entry: CacheEntry = { data, timestamp: Date.now() };
+    localStorage.setItem(key, JSON.stringify(entry));
+  } catch {
+    // localStorage full or unavailable
+  }
+}
+
 export default function useGithubRepos(username = "MunhozIago244", limit = 5) {
   const [repos, setRepos] = useState<Project[] | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
+    const cacheKey = `github_repos_${username}_${limit}`;
 
     async function fetchRepos() {
+      // Check cache first
+      const cached = getCache(cacheKey);
+      if (cached) {
+        setRepos(cached);
+        setLoading(false);
+        return;
+      }
+
       setLoading(true);
       try {
         // optional token from Vite env: VITE_GITHUB_TOKEN
@@ -109,7 +149,10 @@ export default function useGithubRepos(username = "MunhozIago244", limit = 5) {
           }),
         );
 
-        if (!cancelled) setRepos(withCommits);
+        if (!cancelled) {
+          setRepos(withCommits);
+          setCache(cacheKey, withCommits);
+        }
       } catch (err) {
         // fallback para projetos locais se a API falhar
         if (!cancelled) setRepos(localProjects.slice(0, limit));

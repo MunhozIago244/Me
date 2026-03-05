@@ -69,6 +69,18 @@ export default function AIChatTerminal() {
   const [tempKey, setTempKey] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const triggerButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Focus management: return focus to trigger when closing
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    // Return focus to trigger button
+    setTimeout(() => triggerButtonRef.current?.focus(), 0);
+  };
 
   useEffect(() => {
     if (open) {
@@ -166,15 +178,16 @@ export default function AIChatTerminal() {
       e.preventDefault();
       sendMessage(input);
     }
-    if (e.key === "Escape") setOpen(false);
+    if (e.key === "Escape") handleClose();
   }
 
   return (
     <>
       {/* ── Floating trigger button ── */}
       <button
+        ref={triggerButtonRef}
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={handleOpen}
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2.5 bg-bg-secondary border border-accent-purple text-accent-purple font-mono text-sm rounded-lg shadow-lg hover:bg-accent-purple hover:text-bg-base transition-all duration-200 group"
         aria-label="Open AI chat assistant"
       >
@@ -187,12 +200,15 @@ export default function AIChatTerminal() {
       {open && (
         <div
           className="fixed inset-0 z-100 flex items-end sm:items-center justify-center sm:justify-end p-4 sm:p-6"
-          onClick={(e) => e.target === e.currentTarget && setOpen(false)}
+          onClick={(e) => e.target === e.currentTarget && handleClose()}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="ai-chat-title"
         >
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={() => setOpen(false)}
+            onClick={handleClose}
           />
 
           {/* Terminal window */}
@@ -204,13 +220,14 @@ export default function AIChatTerminal() {
                 <div className="w-3 h-3 rounded-full bg-accent-yellow" />
                 <div className="w-3 h-3 rounded-full bg-accent-green" />
               </div>
-              <span className="text-xs text-text-secondary font-mono">
+              <span id="ai-chat-title" className="text-xs text-text-secondary font-mono">
                 bash — portfolio_ai.sh
               </span>
               <button
                 type="button"
-                onClick={() => setOpen(false)}
+                onClick={handleClose}
                 className="text-text-secondary hover:text-text-primary text-xs font-mono transition-colors"
+                aria-label="Fechar chat"
               >
                 [×]
               </button>

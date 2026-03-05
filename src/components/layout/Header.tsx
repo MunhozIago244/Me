@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { navItems, availableForWork } from "../../data/metadata";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
 import { useSoundPreference } from "../../hooks/useSoundPreference";
 
 /**
  * Header fixo com blur glassmorphism, seção ativa,
- * badge de disponibilidade e toggle de som.
+ * badge de disponibilidade, toggle de som e menu mobile.
  */
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { enabled: soundEnabled, toggle: toggleSound } = useSoundPreference();
 
   useEffect(() => {
@@ -46,6 +48,7 @@ export default function Header() {
     href: string,
   ) {
     e.preventDefault();
+    setMobileMenuOpen(false);
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   }
 
@@ -107,8 +110,19 @@ export default function Header() {
           })}
         </div>
 
-        {/* ── Right side: Availability + Sound + Language ── */}
+        {/* ── Right side: Availability + Sound + Language + Mobile Menu ── */}
         <div className="flex items-center gap-3">
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-text-secondary hover:text-text-primary transition-colors p-2"
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
           {/* Availability badge */}
           <div
             className={`hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-mono ${
@@ -150,6 +164,31 @@ export default function Header() {
           <LanguageSwitcher />
         </div>
       </nav>
+
+      {/* ── Mobile Menu ── */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-bg-base/95 backdrop-blur-md border-t border-grid">
+          <nav className="flex flex-col p-4 gap-2">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.replace("#", "");
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`font-mono text-sm py-3 px-4 rounded-lg transition-colors ${
+                    isActive
+                      ? "bg-accent-green/10 text-accent-green"
+                      : "text-text-secondary hover:text-text-primary hover:bg-bg-secondary"
+                  }`}
+                >
+                  <span style={{ color: item.color }}>&gt;</span> {item.label}
+                </a>
+              );
+            })}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

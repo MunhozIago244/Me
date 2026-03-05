@@ -1,13 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Chuva de caracteres Matrix — versão sutil como background.
  * Pausa automaticamente quando o documento está oculto (performance).
+ * Respeita prefers-reduced-motion para acessibilidade.
  */
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Check for reduced motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -67,7 +81,10 @@ export default function MatrixRain() {
       window.removeEventListener("resize", resize);
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };
-  }, []);
+  }, [prefersReducedMotion]);
+
+  // Don't render anything if user prefers reduced motion
+  if (prefersReducedMotion) return null;
 
   return (
     <canvas
