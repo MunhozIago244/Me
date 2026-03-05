@@ -22,6 +22,7 @@ import CursorTrail from "./components/effects/CursorTrail";
 /* ── UI ── */
 import ScrollProgress from "./components/ui/ScrollProgress";
 import LoadingScreen from "./components/ui/LoadingScreen";
+import AIChatTerminal from "./components/ui/AIChatTerminal";
 
 /* ── Utils ── */
 import { printConsoleEasterEggs } from "./data/metadata";
@@ -91,6 +92,9 @@ export default function App() {
 
         {/* ── Footer ── */}
         <Footer />
+
+        {/* ── AI Chat Terminal ── */}
+        <AIChatTerminal />
 
         {/* ── Command Palette ── */}
         <CommandPalette
