@@ -1,10 +1,17 @@
 import type { NavItem, ActivityLine } from "../types/portfolio.types";
 
 /**
- * URL do currículo — substitua pelo link real (Google Drive, Dropbox, etc.)
- * Exemplo: "https://drive.google.com/file/d/.../view"
+ * URLs dos currículos por idioma
  */
-export const RESUME_URL = "/resume.pdf";
+export const RESUME_URLS = {
+  en: "/resume-en.pdf",
+  "pt-BR": "/resume-pt-br.pdf",
+} as const;
+
+/** Helper para obter URL do currículo pelo idioma */
+export function getResumeUrl(lang: string): string {
+  return lang === "pt-BR" ? RESUME_URLS["pt-BR"] : RESUME_URLS.en;
+}
 
 /** Disponibilidade para novas oportunidades */
 export const availableForWork = true;

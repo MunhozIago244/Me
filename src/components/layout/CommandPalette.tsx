@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { FileText, Rocket, Code2, Layers, Mail, Moon } from "lucide-react";
-import { RESUME_URL } from "../../data/metadata";
+import { useTranslation } from "react-i18next";
+import { getResumeUrl } from "../../data/metadata";
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -24,6 +25,7 @@ export default function CommandPalette({
 }: CommandPaletteProps) {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const { i18n } = useTranslation();
 
   /** Wrapper que limpa query ao fechar, garantindo estado limpo na reabertura */
   const handleClose = useCallback(() => {
@@ -48,7 +50,7 @@ export default function CommandPalette({
       label: "Download Resume",
       shortcut: "R",
       action: () => {
-        window.open(RESUME_URL, "_blank");
+        window.open(getResumeUrl(i18n.language), "_blank");
         handleClose();
       },
     },

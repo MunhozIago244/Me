@@ -1,7 +1,7 @@
 import TerminalWindow from "../ui/TerminalWindow";
 import TypewriterEffect from "../ui/TypewriterEffect";
 import Button from "../ui/Button";
-import { bootSequence, RESUME_URL } from "../../data/metadata";
+import { bootSequence, getResumeUrl } from "../../data/metadata";
 import { ArrowRight, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -10,7 +10,8 @@ import { useTranslation } from "react-i18next";
  * Tela cheia com terminal animado + sub-heading + CTAs.
  */
 export default function HeroTerminal() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const resumeUrl = getResumeUrl(i18n.language);
   return (
     <section
       className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20"
@@ -58,7 +59,7 @@ export default function HeroTerminal() {
         <Button
           variant="secondary"
           icon={<Download size={16} />}
-          onClick={() => window.open(RESUME_URL, "_blank")}
+          onClick={() => window.open(resumeUrl, "_blank")}
         >
           {t("hero.cta_resume")}
         </Button>

@@ -1,9 +1,13 @@
-import { RESUME_URL } from "../../data/metadata";
+import { useTranslation } from "react-i18next";
+import { getResumeUrl } from "../../data/metadata";
 
 /**
  * Footer "System Info" com links, quote e easter egg.
  */
 export default function Footer() {
+  const { i18n } = useTranslation();
+  const resumeUrl = getResumeUrl(i18n.language);
+
   return (
     <footer
       className="border-t border-grid py-12 mt-24 bg-bg-base"
@@ -27,7 +31,7 @@ export default function Footer() {
             <h4 className="text-accent-blue mb-3">$ ls ./links</h4>
             <div className="space-y-1">
               <a
-                href={RESUME_URL}
+                href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-text-primary hover:text-accent-green transition-colors"
