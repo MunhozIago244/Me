@@ -1,0 +1,85 @@
+{
+  "greeting": "Hello, welcome to my portfolio!",
+  "nav": {
+    "about": "About me",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "Full Stack Architect & System Designer",
+    "description": "Transforming complex business requirements into robust, high-performance software architectures.",
+    "highlight": "From database optimization to pixel-perfect UIs.",
+    "cta_projects": "view_projects.sh",
+    "cta_resume": "download_resume.pdf"
+  },
+  "about": {
+    "aria_label": "About section",
+    "section_title": "about_the_system",
+    "section_subtitle": "(/src/profile/README.md)",
+    "code": {
+      "roleValue": "Full Stack Architect",
+      "experienceValue": "5+",
+      "currentFocus": "Building enterprise-grade solutions"
+    },
+    "years_label": "years",
+    "passion": {
+      "cloud": "Cloud Systems",
+      "backend": "Backend Systems",
+      "data": "Data Architecture",
+      "security": "Security"
+    },
+    "paragraph_1_part1": "My journey started with",
+    "paragraph_1_part2": "in the corporate world (Bosch), where I learned that",
+    "paragraph_1_emphasis": "performance is non-negotiable",
+    "paragraph_1_part3": "Today I combine backend robustness with modern frontend to build systems that",
+    "paragraph_1_highlight": "scale, perform and delight",
+    "blockquote": "The best architecture is the one that solves the right problem, in the simplest possible way, but not simpler than that.",
+    "metrics": {
+      "years": "Years of Code",
+      "projects": "Projects Shipped",
+      "coffee": "Coffee Consumed",
+      "bugs": "Bugs Squashed"
+    },
+    "recent_activity": "Recent Activity:"
+  },
+  "experience": {
+    "section_title": "git blame --professional",
+    "section_subtitle": "→ professional_history.log",
+    "type": {
+      "full-time": "full-time",
+      "freelance": "freelance",
+      "contract": "contract"
+    }
+  },
+  "stack": {
+    "aria_label": "Tech stack section",
+    "section_title": "tech_stack.sql",
+    "section_subtitle": "SELECT * FROM skills WHERE proficiency >= 'Senior';",
+    "view_tablist": "Toggle view SQL/JSON",
+    "view": {
+      "sql": "SQL View",
+      "json": "JSON View"
+    },
+    "table": {
+      "category": "CATEGORY",
+      "technology": "TECHNOLOGY",
+      "proficiency": "PROFICIENCY",
+      "years": "YEARS"
+    },
+    "query_footer": "→ Query returned {{count}} rows in 0.023s",
+    "copy_json": "Copy JSON",
+    "copy_success": "Copied!",
+    "copy_fail": "Copy failed"
+  },
+  "projects": {
+    "section_title": "git log --featured --oneline",
+    "section_subtitle": "(showing {{count}} of 50+ commits)",
+    "loading": "Fetching repositories...",
+    "git_clone": "git clone",
+    "view_live": "view live",
+    "problem_solved": "Problem Solved:"
+  },
+  "contact": {
+    "aria_label": "Contact section"
+  }
+}

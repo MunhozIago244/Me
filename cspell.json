@@ -1,0 +1,15 @@
+{
+  "version": "0.2",
+  "language": "en,pt,pt_BR",
+  "words": [
+    "glassmorphism",
+    "munhoz",
+    "oneline",
+    "cyberpunk",
+    "iago",
+    "tailwindcss",
+    "lucide",
+    "vite"
+  ],
+  "ignorePaths": ["node_modules", "dist", "package-lock.json"]
+}

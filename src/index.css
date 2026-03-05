@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════
+   Tailwind v4 theme
+   ═══════════════════════════════════════════════════════ */
+@theme {
+  --font-mono:
+    "JetBrains Mono", "Fira Code", "SF Mono", ui-monospace, monospace;
+  --font-sans: "Inter", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg-base: #0a0e27;
+  --color-bg-secondary: #141b2d;
+  --color-accent-green: #50fa7b;
+  --color-accent-blue: #8be9fd;
+  --color-accent-yellow: #f1fa8c;
+  --color-accent-red: #ff5555;
+  --color-text-primary: #f8f8f2;
+  --color-text-secondary: #6272a4;
+  --color-grid: #1e2440;
+  --color-code: #282a36;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Base Styles
+   ═══════════════════════════════════════════════════════ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+  }
+
+  /* Focus visible for keyboard navigation */
+  *:focus-visible {
+    outline: 2px solid var(--color-accent-green);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-grid);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-secondary);
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(80, 250, 123, 0.3);
+    color: var(--color-text-primary);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Keyframe Animations
+   ═══════════════════════════════════════════════════════ */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 0.35;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Utility Classes
+   ═══════════════════════════════════════════════════════ */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .animate-in {
+    animation: animate-in 0.2s ease-out;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Print Styles — currículo impresso direto do portfólio
+   ═══════════════════════════════════════════════════════ */
+@media print {
+  /* Esconde elementos visuais pesados */
+  canvas,
+  [aria-hidden="true"],
+  header,
+  footer,
+  #contact,
+  #metrics {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11pt;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  /* Seções com borda simples */
+  section {
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    break-inside: avoid;
+  }
+
+  /* Links visíveis no print */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+
+  /* Remove animações */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

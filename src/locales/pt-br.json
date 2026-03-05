@@ -1,0 +1,85 @@
+{
+  "greeting": "Olá, seja bem-vindo ao meu portfólio!",
+  "nav": {
+    "about": "Sobre mim",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "role": "Arquiteto Full Stack & Designer de Sistemas",
+    "description": "Transformando requisitos de negócio complexos em arquiteturas de software robustas e de alta performance.",
+    "highlight": "Da otimização de banco de dados ao pixel-perfect UI.",
+    "cta_projects": "ver_projetos.sh",
+    "cta_resume": "baixar_curriculo.pdf"
+  },
+  "about": {
+    "aria_label": "Seção sobre",
+    "section_title": "about_the_system",
+    "section_subtitle": "(/src/profile/README.md)",
+    "code": {
+      "roleValue": "Arquiteto Full Stack",
+      "experienceValue": "5+",
+      "currentFocus": "Construindo soluções enterprise-grade"
+    },
+    "years_label": "anos",
+    "passion": {
+      "cloud": "Cloud Systems",
+      "backend": "Backend Systems",
+      "data": "Data Architecture",
+      "security": "Security"
+    },
+    "paragraph_1_part1": "Minha jornada começou com",
+    "paragraph_1_part2": "no mundo corporativo (Bosch), onde aprendi que",
+    "paragraph_1_emphasis": "performance não é negociável",
+    "paragraph_1_part3": "Hoje, combino a robustez do backend com a modernidade do frontend para criar sistemas que",
+    "paragraph_1_highlight": "escalam, performam e encantam",
+    "blockquote": "A melhor arquitetura é aquela que resolve o problema certo, da forma mais simples possível, mas não mais simples que isso.",
+    "metrics": {
+      "years": "Anos de Código",
+      "projects": "Projetos Entregues",
+      "coffee": "Cafés Consumidos",
+      "bugs": "Bugs Corrigidos"
+    },
+    "recent_activity": "Atividade Recente:"
+  },
+  "experience": {
+    "section_title": "git blame --professional",
+    "section_subtitle": "→ professional_history.log",
+    "type": {
+      "full-time": "tempo integral",
+      "freelance": "freelance",
+      "contract": "contrato"
+    }
+  },
+  "stack": {
+    "aria_label": "Seção tech stack",
+    "section_title": "tech_stack.sql",
+    "section_subtitle": "SELECT * FROM skills WHERE proficiency >= 'Senior';",
+    "view_tablist": "Alternar visualização SQL/JSON",
+    "view": {
+      "sql": "SQL View",
+      "json": "JSON View"
+    },
+    "table": {
+      "category": "CATEGORIA",
+      "technology": "TECNOLOGIA",
+      "proficiency": "PROFICIÊNCIA",
+      "years": "ANOS"
+    },
+    "query_footer": "→ Query retornou {{count}} linhas em 0.023s",
+    "copy_json": "Copiar JSON",
+    "copy_success": "Copiado!",
+    "copy_fail": "Falha ao copiar"
+  },
+  "projects": {
+    "section_title": "git log --featured --oneline",
+    "section_subtitle": "(mostrando {{count}} de 50+ commits)",
+    "loading": "Buscando repositórios...",
+    "git_clone": "git clone",
+    "view_live": "ver ao vivo",
+    "problem_solved": "Problema Resolvido:"
+  },
+  "contact": {
+    "aria_label": "Seção de contato"
+  }
+}
