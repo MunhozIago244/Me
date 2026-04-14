@@ -10,7 +10,8 @@ export default function Footer() {
 
   return (
     <footer
-      className="border-t border-grid py-12 mt-24 bg-bg-base"
+      className="border-t border-grid py-12 mt-24"
+      style={{ backgroundColor: "var(--color-bg-base)" }}
       role="contentinfo"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
