@@ -28,10 +28,10 @@ export const navItems: NavItem[] = [
 
 /** Atividades recentes (mock) */
 export const recentActivity: ActivityLine[] = [
-  { icon: "✓", text: "Deployed to prod", time: "2h ago", color: "#50fa7b" },
-  { icon: "→", text: "Code review", time: "5h ago", color: "#8be9fd" },
-  { icon: "⚡", text: "Optimized query", time: "1d ago", color: "#f1fa8c" },
-  { icon: "🔒", text: "Security patch", time: "2d ago", color: "#ff5555" },
+  { icon: "✓", text: "Nobello deployed to prod", time: "2h ago", color: "#50fa7b" },
+  { icon: "→", text: "MCP Server Trello: new tool", time: "5h ago", color: "#8be9fd" },
+  { icon: "⚡", text: "Finance.AI: Claude API integration", time: "1d ago", color: "#f1fa8c" },
+  { icon: "📚", text: "Aula de Back-End ministrada", time: "2d ago", color: "#bd93f9" },
 ];
 
 /** Linhas de boot do terminal hero */
@@ -41,16 +41,16 @@ export const bootSequence = [
   ">",
   "> [████████████████████] 100%",
   ">",
-  "> [OK] Full Stack Architecture Loaded",
-  "> [OK] Backend Systems (Java | Node | Python)",
-  "> [OK] Frontend Engineering (React | TypeScript)",
-  "> [OK] Data Pipeline & Analytics",
-  "> [OK] Security & DevOps Protocols",
-  "> [OK] Cloud Infrastructure (AWS | Azure)",
+  "> [OK] Full Stack Dev Loaded (Next.js | React | TypeScript)",
+  "> [OK] Backend Systems (Node.js | Python | Supabase)",
+  "> [OK] AI Integration (Claude API | MCP Protocol)",
+  "> [OK] Payments & Commerce (Stripe | PostgreSQL RLS)",
+  "> [OK] Mobile (Kotlin | Android)",
+  "> [OK] Education Mode (Professor Técnico — SEDUC-SP)",
   ">",
-  "> ⚡ system.status: OPERATIONAL",
-  "> 🎯 mission: Build scalable, elegant software",
-  "> 📍 location: BR > World",
+  "> ⚡ system.status: OPEN_TO_WORK",
+  "> 🎯 mission: Build real products with real AI",
+  "> 📍 location: Campinas, SP → Remote",
   ">",
   "> type 'help' for available commands...",
 ];

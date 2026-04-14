@@ -11,59 +11,71 @@ export interface Experience {
   tech: string[];
 }
 
-/**
- * Histórico profissional — atualize com suas experiências reais.
- */
 export const experiences: Experience[] = [
   {
     id: 1,
-    commitHash: "f4a1b3c",
-    company: "Freelance / Open Source",
-    role: "Full Stack Architect",
-    period: "2022 — Present",
-    location: "Remote",
-    type: "freelance",
+    commitHash: "f1a2b3c",
+    company: "EE Tenista Maria Esther Bueno — SEDUC-SP",
+    role: "Full Stack Developer & Professor Técnico",
+    period: "2025 — Presente",
+    location: "Campinas, SP",
+    type: "full-time",
     description:
-      "Desenvolvimento de soluções enterprise para clientes nacionais e internacionais. Arquitetura de sistemas distribuídos, APIs REST/GraphQL e aplicações React de alta performance.",
+      "Leciono disciplinas do curso técnico de Desenvolvimento de Sistemas: Back-End (Python/Node.js), Mobile, Redes e Lógica de Programação. Desenvolvo soluções reais para a escola, como extensões e ferramentas de automação para a plataforma SEDUC.",
     highlights: [
-      "30+ projetos entregues com 99.9% uptime",
-      "Redução de 40% no custo de infra com otimização de queries e cache",
-      "Pipelines CI/CD que reduziram o deploy time em 60%",
+      "Docência em Back-End (Python/Node.js), Mobile e Lógica de Programação",
+      "Criação da extensão seduc-notas — automatiza lançamento de notas no Moodle da SEDUC-SP",
+      "Desenvolvimento de ferramentas internas para automação de processos educacionais",
     ],
-    tech: ["React", "Node.js", "Java", "PostgreSQL", "Docker", "AWS"],
+    tech: ["Python", "Node.js", "JavaScript", "Chrome Extension", "Moodle"],
   },
   {
     id: 2,
-    commitHash: "a2e9d47",
-    company: "Bosch",
-    role: "Software Engineer",
-    period: "2020 — 2022",
-    location: "Brasil",
+    commitHash: "e9d8c7b",
+    company: "SESI Indaiatuba",
+    role: "FabLab Laboratory Instructor / Técnico",
+    period: "Fev 2025 — Ago 2025",
+    location: "Indaiatuba, SP",
     type: "full-time",
     description:
-      "Desenvolvimento e manutenção de sistemas críticos para a indústria automotiva. Foco em backend Java com Spring Boot, integrações com sistemas legados e otimização de performance em ambiente de alta criticidade.",
+      "Instrutor técnico no laboratório FabLab do SESI Indaiatuba. Orientei alunos em projetos de fabricação digital, prototipagem e tecnologia aplicada à indústria.",
     highlights: [
-      "Migração de sistema monolítico para microsserviços — 3x mais throughput",
-      "Dashboard de métricas de produção em tempo real (WebSocket + React)",
-      "Redução de 70% no tempo de processamento de relatórios críticos",
+      "Suporte técnico e instrução em projetos de fabricação digital e prototipagem",
+      "Orientação em projetos práticos com tecnologia industrial",
     ],
-    tech: ["Java", "Spring Boot", "Oracle DB", "Kafka", "Docker", "Jenkins"],
+    tech: ["Fabricação Digital", "Prototipagem", "IoT"],
   },
   {
     id: 3,
-    commitHash: "c7b3e91",
-    company: "Early Career & Projetos Acadêmicos",
-    role: "Full Stack Developer",
-    period: "2018 — 2020",
-    location: "Brasil",
-    type: "freelance",
+    commitHash: "d4e5f6a",
+    company: "Microcamp Valinhos",
+    role: "Coordenador de Cursos de Tecnologia",
+    period: "Nov 2024 — Fev 2025",
+    location: "Valinhos, SP",
+    type: "full-time",
     description:
-      "Início da jornada em desenvolvimento: primeiros projetos full-stack, APIs REST e interfaces React. Base sólida construída com projetos reais, aprendizado intensivo e muita curiosidade.",
+      "Coordenação de cursos de tecnologia e programação, gestão de instrutores e acompanhamento pedagógico de alunos em trilhas de desenvolvimento de software.",
     highlights: [
-      "10+ aplicações web desenvolvidas do zero",
-      "Primeiro contato com cloud (AWS) e containerização (Docker)",
-      "Aprendizado profundo de arquitetura de software e boas práticas",
+      "Coordenação de cursos de programação e tecnologia",
+      "Gestão de instrutores e acompanhamento pedagógico",
     ],
-    tech: ["JavaScript", "React", "Node.js", "MySQL", "HTML/CSS"],
+    tech: ["Gestão Educacional", "Programação", "Liderança"],
+  },
+  {
+    id: 4,
+    commitHash: "a7b8c9d",
+    company: "Bosch Campinas",
+    role: "Estagiário — Comércio Exterior / Importação",
+    period: "Jul 2023 — Nov 2024",
+    location: "Campinas, SP",
+    type: "contract",
+    description:
+      "Estágio na área de Comércio Exterior com foco em importação. Utilização intensiva de SAP para controle de processos logísticos, macros Excel para automação de relatórios e comunicação técnica em inglês com parceiros internacionais.",
+    highlights: [
+      "Operação de SAP para controle de processos de importação e logística",
+      "Automação de relatórios com macros Excel, reduzindo tempo de processos manuais",
+      "Comunicação técnica diária em inglês com fornecedores e parceiros internacionais",
+    ],
+    tech: ["SAP", "Excel (Macros)", "Inglês Técnico", "Logística Internacional"],
   },
 ];

@@ -6,9 +6,9 @@
     "contact": "Contato"
   },
   "hero": {
-    "role": "Arquiteto Full Stack & Designer de Sistemas",
-    "description": "Transformando requisitos de negócio complexos em arquiteturas de software robustas e de alta performance.",
-    "highlight": "Da otimização de banco de dados ao pixel-perfect UI.",
+    "role": "Full Stack Developer & AI Builder",
+    "description": "Construo produtos reais com IA generativa, MCP Servers e stacks modernas — do e-commerce ao processamento de dados políticos.",
+    "highlight": " Professor técnico de Desenvolvimento de Sistemas na rede estadual de SP.",
     "cta_projects": "ver_projetos.sh",
     "cta_resume": "baixar_curriculo.pdf"
   },
@@ -17,23 +17,23 @@
     "section_title": "about_the_system",
     "section_subtitle": "(/src/profile/README.md)",
     "code": {
-      "roleValue": "Arquiteto Full Stack",
-      "experienceValue": "5+",
-      "currentFocus": "Construindo soluções enterprise-grade"
+      "roleValue": "Full Stack Developer & AI Builder",
+      "experienceValue": "3+",
+      "currentFocus": "IA em produção, MCP Protocol e produtos reais"
     },
     "years_label": "anos",
     "passion": {
-      "cloud": "Cloud Systems",
-      "backend": "Backend Systems",
-      "data": "Data Architecture",
-      "security": "Security"
+      "cloud": "AI Integration",
+      "backend": "Backend & APIs",
+      "data": "Full Stack",
+      "security": "MCP Protocol"
     },
-    "paragraph_1_part1": "Minha jornada começou com",
-    "paragraph_1_part2": "no mundo corporativo (Bosch), onde aprendi que",
-    "paragraph_1_emphasis": "performance não é negociável",
-    "paragraph_1_part3": "Hoje, combino a robustez do backend com a modernidade do frontend para criar sistemas que",
-    "paragraph_1_highlight": "escalam, performam e encantam",
-    "blockquote": "A melhor arquitetura é aquela que resolve o problema certo, da forma mais simples possível, mas não mais simples que isso.",
+    "paragraph_1_part1": "Minha jornada passou por",
+    "paragraph_1_part2": "comércio exterior na Bosch, onde aprendi que",
+    "paragraph_1_emphasis": "clareza e precisão não são opcionais",
+    "paragraph_1_part3": "Hoje construo produtos com IA generativa (Claude API, MCP Servers) e leciono Back-End e Mobile no curso técnico da SEDUC-SP — porque",
+    "paragraph_1_highlight": "ensinar e construir andam juntos",
+    "blockquote": "Formado em Análise e Desenvolvimento de Sistemas pelo SENAI Roberto Mange (2024) e Técnico em Mecatrônica pelo SENAI Roberto Mange (2022). Inglês C1 — EF SET 2025.",
     "metrics": {
       "years": "Anos de Código",
       "projects": "Projetos Entregues",
@@ -54,7 +54,7 @@
   "stack": {
     "aria_label": "Seção tech stack",
     "section_title": "tech_stack.sql",
-    "section_subtitle": "SELECT * FROM skills WHERE proficiency >= 'Senior';",
+    "section_subtitle": "SELECT * FROM skills WHERE proficiency >= 'Advanced';",
     "view_tablist": "Alternar visualização SQL/JSON",
     "view": {
       "sql": "SQL View",
@@ -73,7 +73,7 @@
   },
   "projects": {
     "section_title": "git log --featured --oneline",
-    "section_subtitle": "(mostrando {{count}} de 50+ commits)",
+    "section_subtitle": "(mostrando {{count}} projetos reais)",
     "loading": "Buscando repositórios...",
     "git_clone": "git clone",
     "view_live": "ver ao vivo",

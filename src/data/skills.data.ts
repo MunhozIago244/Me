@@ -1,126 +1,107 @@
 import type { Skill } from "../types/portfolio.types";
 
 export const skills: Skill[] = [
-  // Backend Core
+  // Frontend & Full Stack
   {
-    category: "Backend_Core",
-    technology: "Java (Spring Boot)",
+    category: "Frontend_FullStack",
+    technology: "Next.js",
     proficiency: "EXPERT",
-    years: "4+",
+    years: "2+",
   },
   {
-    category: "Backend_Core",
-    technology: "Node.js (Express/Nest)",
-    proficiency: "EXPERT",
-    years: "4+",
-  },
-  {
-    category: "Backend_Core",
-    technology: "Python (Django/FastAPI)",
-    proficiency: "ADVANCED",
-    years: "3+",
-  },
-
-  // Frontend
-  {
-    category: "Frontend_UI",
+    category: "Frontend_FullStack",
     technology: "React + TypeScript",
     proficiency: "EXPERT",
-    years: "4+",
+    years: "3+",
   },
   {
-    category: "Frontend_UI",
-    technology: "Next.js",
+    category: "Frontend_FullStack",
+    technology: "Node.js",
     proficiency: "ADVANCED",
-    years: "2+",
-  },
-  {
-    category: "Frontend_UI",
-    technology: "Tailwind CSS",
-    proficiency: "EXPERT",
     years: "3+",
   },
 
-  // Data Layer
+  // Backend & Infra
   {
-    category: "Data_Layer",
-    technology: "PostgreSQL / MySQL",
-    proficiency: "EXPERT",
-    years: "5+",
-  },
-  {
-    category: "Data_Layer",
-    technology: "MongoDB / Redis",
+    category: "Backend_Infra",
+    technology: "Python (FastAPI / Scripts)",
     proficiency: "ADVANCED",
     years: "3+",
   },
   {
-    category: "Data_Layer",
-    technology: "Apache Kafka",
+    category: "Backend_Infra",
+    technology: "Supabase / PostgreSQL",
+    proficiency: "EXPERT",
+    years: "2+",
+  },
+  {
+    category: "Backend_Infra",
+    technology: "Kotlin (Mobile)",
     proficiency: "INTERMEDIATE",
-    years: "2+",
+    years: "1+",
   },
 
-  // DevOps & Cloud
+  // AI & Protocols
   {
-    category: "DevOps_Cloud",
-    technology: "Docker / Kubernetes",
-    proficiency: "ADVANCED",
-    years: "3+",
+    category: "AI_Protocols",
+    technology: "Claude API (Anthropic)",
+    proficiency: "EXPERT",
+    years: "1+",
   },
   {
-    category: "DevOps_Cloud",
-    technology: "AWS / Azure",
-    proficiency: "ADVANCED",
-    years: "3+",
+    category: "AI_Protocols",
+    technology: "MCP Protocol",
+    proficiency: "EXPERT",
+    years: "1+",
   },
   {
-    category: "DevOps_Cloud",
-    technology: "GitHub Actions / Jenkins",
+    category: "AI_Protocols",
+    technology: "AI Integration (Prod)",
     proficiency: "ADVANCED",
-    years: "3+",
+    years: "1+",
   },
 
-  // Security
+  // Payments & Tools
   {
-    category: "Security",
-    technology: "OAuth 2.0 / JWT / SSO",
+    category: "Payments_Tools",
+    technology: "Stripe",
+    proficiency: "ADVANCED",
+    years: "1+",
+  },
+  {
+    category: "Payments_Tools",
+    technology: "SAP (MM/SD)",
+    proficiency: "INTERMEDIATE",
+    years: "1+",
+  },
+  {
+    category: "Payments_Tools",
+    technology: "Git / GitHub",
     proficiency: "EXPERT",
     years: "4+",
-  },
-  {
-    category: "Security",
-    technology: "OWASP Top 10 / Pen Testing",
-    proficiency: "ADVANCED",
-    years: "3+",
   },
 ];
 
 /** JSON tree alternativo para a seção */
 export const techTreeJSON = {
-  backend_core: {
-    languages: ["Java", "Node.js", "Python"],
-    frameworks: ["Spring Boot", "Express", "NestJS", "FastAPI"],
-    apis: ["REST", "GraphQL", "gRPC"],
+  frontend_fullstack: {
+    frameworks: ["Next.js", "React", "TypeScript"],
+    runtime: ["Node.js"],
+    styling: ["Tailwind CSS"],
   },
-  frontend_interface: {
-    core: ["React", "TypeScript", "Next.js"],
-    styling: ["Tailwind CSS", "Styled Components"],
-    state: ["Redux", "Zustand", "React Query"],
+  backend_infra: {
+    languages: ["Python", "TypeScript", "Kotlin"],
+    database: ["Supabase", "PostgreSQL"],
+    apis: ["REST", "FastAPI"],
   },
-  data_infrastructure: {
-    sql: ["PostgreSQL", "MySQL", "SQL Server"],
-    nosql: ["MongoDB", "Redis", "Cassandra"],
-    etl: ["Apache Airflow", "dbt"],
+  ai_protocols: {
+    llm: ["Claude API (Anthropic)"],
+    protocols: ["MCP Protocol"],
+    integrations: ["brapi.dev", "Mistral OCR"],
   },
-  devops_cloud: {
-    containers: ["Docker", "Kubernetes"],
-    cloud: ["AWS", "Azure", "GCP"],
-    ci_cd: ["GitHub Actions", "Jenkins", "ArgoCD"],
-  },
-  security_focus: {
-    auth: ["OAuth 2.0", "JWT", "SSO"],
-    encryption: ["AES", "RSA"],
-    practices: ["OWASP Top 10", "Penetration Testing"],
+  payments_tools: {
+    payments: ["Stripe"],
+    erp: ["SAP"],
+    devtools: ["Git", "GitHub", "Vercel"],
   },
 };

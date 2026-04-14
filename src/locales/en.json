@@ -6,9 +6,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "role": "Full Stack Architect & System Designer",
-    "description": "Transforming complex business requirements into robust, high-performance software architectures.",
-    "highlight": "From database optimization to pixel-perfect UIs.",
+    "role": "Full Stack Developer & AI Builder",
+    "description": "I build real products with generative AI, MCP Servers, and modern stacks — from e-commerce to political data intelligence.",
+    "highlight": " Technical teacher of Systems Development in São Paulo's public school network.",
     "cta_projects": "view_projects.sh",
     "cta_resume": "download_resume.pdf"
   },
@@ -17,23 +17,23 @@
     "section_title": "about_the_system",
     "section_subtitle": "(/src/profile/README.md)",
     "code": {
-      "roleValue": "Full Stack Architect",
-      "experienceValue": "5+",
-      "currentFocus": "Building enterprise-grade solutions"
+      "roleValue": "Full Stack Developer & AI Builder",
+      "experienceValue": "3+",
+      "currentFocus": "AI in production, MCP Protocol, and real products"
     },
     "years_label": "years",
     "passion": {
-      "cloud": "Cloud Systems",
-      "backend": "Backend Systems",
-      "data": "Data Architecture",
-      "security": "Security"
+      "cloud": "AI Integration",
+      "backend": "Backend & APIs",
+      "data": "Full Stack",
+      "security": "MCP Protocol"
     },
-    "paragraph_1_part1": "My journey started with",
-    "paragraph_1_part2": "in the corporate world (Bosch), where I learned that",
-    "paragraph_1_emphasis": "performance is non-negotiable",
-    "paragraph_1_part3": "Today I combine backend robustness with modern frontend to build systems that",
-    "paragraph_1_highlight": "scale, perform and delight",
-    "blockquote": "The best architecture is the one that solves the right problem, in the simplest possible way, but not simpler than that.",
+    "paragraph_1_part1": "My path went through",
+    "paragraph_1_part2": "international trade at Bosch, where I learned that",
+    "paragraph_1_emphasis": "clarity and precision are non-negotiable",
+    "paragraph_1_part3": "Today I build products with generative AI (Claude API, MCP Servers) and teach Back-End and Mobile in SP's public technical school — because",
+    "paragraph_1_highlight": "building and teaching go hand in hand",
+    "blockquote": "B.S. in Systems Analysis & Development from SENAI Roberto Mange (2024) and Technical Degree in Mechatronics from SENAI Roberto Mange (2022). English C1 — EF SET 2025.",
     "metrics": {
       "years": "Years of Code",
       "projects": "Projects Shipped",
@@ -54,7 +54,7 @@
   "stack": {
     "aria_label": "Tech stack section",
     "section_title": "tech_stack.sql",
-    "section_subtitle": "SELECT * FROM skills WHERE proficiency >= 'Senior';",
+    "section_subtitle": "SELECT * FROM skills WHERE proficiency >= 'Advanced';",
     "view_tablist": "Toggle view SQL/JSON",
     "view": {
       "sql": "SQL View",
@@ -73,7 +73,7 @@
   },
   "projects": {
     "section_title": "git log --featured --oneline",
-    "section_subtitle": "(showing {{count}} of 50+ commits)",
+    "section_subtitle": "(showing {{count}} real projects)",
     "loading": "Fetching repositories...",
     "git_clone": "git clone",
     "view_live": "view live",
